@@ -1,0 +1,54 @@
+// Primary Palette
+$brand-color-a: #1868fb;
+$brand-color-b: #001daf;
+$brand-color-c: #1dc6a2;
+$brand-color-d: #cfd6e4;
+
+// Aliases
+$color-text: #5b6272;
+$color-title: #37383c;
+$white: #fff;
+$black: #000;
+
+// Dimensions
+$max-width: 1200px; // overall max width
+$vertical-rhythm: 6px; // use $vr*X to maintain vertical consistency
+$vr: $vertical-rhythm; // Alias
+$gutter-width: 24px;
+$ggw: $gutter-width; // Alias
+
+// Typography
+$font-family-sans-serif: sans-serif;
+$font-family-serif: serif;
+$font-family-base: $font-family-sans-serif;
+
+// Media Query Break Points (px & em)
+// Media Query Ranges
+$bp-a-px: 320px;
+$bp-b-px: 480px;
+$bp-c-px: 600px;
+$bp-d-px: 768px;
+$bp-e-px: 980px;
+$bp-f-px: 1248px;
+
+// convert to EM
+$bp-a-em-val: 320 / 16;
+$bp-b-em-val: 480 / 16;
+$bp-c-em-val: 600 / 16;
+$bp-d-em-val: 768 / 16;
+$bp-e-em-val: 980 / 16;
+$bp-f-em-val: 1248 / 16;
+
+$bp-a-em: #{$bp-a-em-val}em;
+$bp-b-em: #{$bp-b-em-val}em;
+$bp-c-em: #{$bp-c-em-val}em;
+$bp-d-em: #{$bp-d-em-val}em;
+$bp-e-em: #{$bp-e-em-val}em;
+$bp-f-em: #{$bp-f-em-val}em;
+
+$bp-a: "only screen and (min-width : #{$bp-a-em})" !default;
+$bp-b: "only screen and (min-width : #{$bp-b-em})" !default;
+$bp-c: "only screen and (min-width : #{$bp-c-em})" !default;
+$bp-d: "only screen and (min-width : #{$bp-d-em})" !default;
+$bp-e: "only screen and (min-width : #{$bp-e-em})" !default;
+$bp-f: "only screen and (min-width : #{$bp-f-em})" !default;
