@@ -19,7 +19,11 @@ export default {
 
 .heading {
   text-align: center;
-  margin-bottom: $vr * 8;
+  margin-bottom: $vr * 4;
+
+  @media #{$bp-d} {
+    margin-bottom: $vr * 8;
+  }
 }
 
 .title {

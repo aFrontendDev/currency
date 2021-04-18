@@ -134,18 +134,44 @@ export default {
   flex-direction: column;
   height: 100%;
   background-color: $brand-color-e;
-  padding: $vr * 4 $ggw;
   border-radius: 4px;
+  padding: $vr * 4 $ggw / 2;
+  margin-bottom: $vr * 4;
+
+  @media #{$bp-d} {
+    padding: $vr * 4 $ggw;
+    margin-bottom: 0;
+  }
+}
+
+.currency-control {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media #{$bp-b} {
+    flex-direction: row;
+  }
+
+  @media #{$bp-d} {
+    flex-direction: column;
+  }
 }
 
 .currency-control__fieldset {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+
+  @media #{$bp-b} {
+    align-items: flex-end;
+  }
 }
 
 .currency-control__rates {
-  margin-bottom: $vr * 6;
+
+  @media #{$bp-d} {
+    margin-bottom: $vr * 6;
+  }
 }
 
 .currency-control__switch {
@@ -161,9 +187,18 @@ export default {
   }
 }
 
-.currency-control__selection,
+.currency-control__selection {
+  display: flex;
+  margin-bottom: $vr * 3;
+}
+
 .currency-control__switch {
   margin-bottom: $vr * 3;
+  order: 2;
+
+  @media #{$bp-b} {
+    order: revert;
+  }
 }
 
 .currency-control__label {
@@ -174,15 +209,30 @@ export default {
 
 .currency-control__select {
   min-width: 100px;
+  flex: 1;
 }
 
 .currency-control__target {
-  margin-bottom: $vr * 15;
+  display: flex;
+  margin-bottom: $vr * 2;
+
+  @media #{$bp-d} {
+    margin-bottom: $vr * 15;
+  }
 }
 
 .currency-control__calculation-results {
   display: flex;
   flex-direction: column;
+}
+
+.currency-control__calculation-input {
+  width: 100px;
+  flex: 1;
+
+  @media #{$bp-d} {
+    width: auto;
+  }
 }
 
 .currency-control__calculation-base {
@@ -194,6 +244,7 @@ export default {
 .currency-control__calculation-target {
   font-size: 45px;
   line-height: $vr * 8;
+  text-align: end;
 }
 
 </style>

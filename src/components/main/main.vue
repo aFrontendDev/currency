@@ -55,9 +55,17 @@ export default {
   flex-direction: column;
   height: 100%;
   background-color: $brand-color-e;
-  padding: $vr * 4 $ggw;
+  padding: $vr * 2 $ggw / 2;
   border-radius: 4px;
-  margin-left: $ggw * 3;
+
+  @media #{$bp-d} {
+    padding: $vr * 4 $ggw;
+    margin-left: $ggw;
+  }
+
+  @media #{$bp-e} {
+    margin-left: $ggw * 3;
+  }
 }
 
 .rates {
@@ -65,7 +73,23 @@ export default {
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @media #{$bp-c} {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media #{$bp-d} {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media #{$bp-e} {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  @media #{$bp-f} {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
 }
 
 .rates-item {
