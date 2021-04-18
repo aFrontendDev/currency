@@ -20,3 +20,20 @@ main {
   overflow: hidden;
   width: 100%;
 }
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  // remove default styles
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 0;
+  padding: 0;
+  width: auto;
+}

@@ -8,13 +8,14 @@
         v-on:baseUpdate="baseUpdate"
         v-on:targetUpdate="targetUpdate"
         v-on:switchCurrency="switchCurrency"
-        v-bind:currencies="currencies"
         v-bind:base="base"
         v-bind:target="target"
+        v-bind:ratesArr="ratesArr"
+        v-bind:ratesObj="ratesObj"
       />
     </div>
     <div class="layout__main">
-      <Main v-bind:rates="rates" v-bind:base="base" v-bind:target="target" />
+      <Main v-bind:rates="ratesArr" v-bind:base="base" v-bind:target="target" />
     </div>
   </div>
 </template>
@@ -34,10 +35,10 @@ export default {
   },
   data: function () {
     return {
-      rates: null,
-      currencies: [],
+      ratesArr: [],
       base: '',
-      target: ''
+      target: '',
+      ratesObj: {}
     }
   },
   created() {
@@ -55,14 +56,10 @@ export default {
         .then(res => res.json())
         .then(json => {
           const { rates, base } = json || {};
+          this.ratesObj = rates || {};
           
-          // get currency keys for use in selects if initial request (no seleted base value)
-          const keys = Object.keys(rates);
-          if (!selectedBase) {
-            this.currencies = keys;
-          }
-
           // get currency data in array format for use in main listings
+          const keys = Object.keys(rates);
           const ratesArr = keys.map(key => {
             const value = rates[key];
             return {
@@ -70,7 +67,7 @@ export default {
               value
             };
           });
-          this.rates = ratesArr;
+          this.ratesArr = ratesArr;
 
           // set defaults on base and target
           this.base = base;
