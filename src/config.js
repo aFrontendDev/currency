@@ -3,5 +3,5 @@ export const apiKeys = {
 };
 
 export const endpoints = {
-  currency: 'http://api.exchangeratesapi.io/v1/latest?access_key=[API_KEY]'
+  currency: 'https://api.exchangeratesapi.io/v1/latest?access_key=[API_KEY]'
 };
